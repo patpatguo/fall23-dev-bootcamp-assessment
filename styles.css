@@ -10,17 +10,17 @@ body {
     }
 .card {
     display: flex;
-    padding: 64px 48px;
+    padding: 48px 48px;
     justify-content: center;
     align-items: flex-end;
-    gap: 36px;
+    gap: 24px;
     max-width: 853px;
     background: url(img/gradient.png);
     background-size: cover;
     border-image: linear-gradient(270deg,#853AFF, #57A5A9) 30;
     border-width: 1px;
     border-style: solid;
-    animation: 2s cubic-bezier(.19,1,.22,1) slideInFromBottomImg;
+    animation: 3s cubic-bezier(.19,1,.22,1) slideInFromBottomImg;
 }
 .card-body {
     display: flex;
@@ -34,7 +34,7 @@ img {
     display: block;
     width: auto;
     height: 342px;
-    animation: 2s cubic-bezier(.19,1,.22,1) slideInFromBottomImg;
+    animation: 1.5s cubic-bezier(.19,1,.22,1) slideInFromBottomImg;
 }
 @font-face {
     font-family: 'Inter'; 
@@ -74,7 +74,7 @@ h2 {
     text-transform: uppercase;
     margin: 0px;
 
-    animation: 2s cubic-bezier(.19,1,.22,1) slideInFromBottom;
+    animation: 2.5s cubic-bezier(.19,1,.22,1) slideInFromBottom;
 }
 p {
     color: #FFF;
@@ -84,17 +84,33 @@ p {
     font-weight: 400;
     line-height: normal;
     margin: 0px;
-    animation: 2s cubic-bezier(.19,1,.22,1) slideInFromBottom;
+    animation: 2.75s cubic-bezier(.19,1,.22,1) slideInFromBottomBody;
+    animation-delay: 100ms;
 }
 @keyframes slideInFromBottom {
     0% {
-        transform: translateY(75%);
-        transform: translateX(-8%);
+        transform: translateX(-10%);
         opacity: 0;
     }
     10% {
-        transform: translateY(75%);
-        transform: translateX(-8%);
+        transform: translateX(-10%);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+         opacity: 1;
+    }
+}
+@keyframes slideInFromBottomBody{
+    0% {
+        transform: translateX(-5%);
+        opacity: 0;
+    }
+    10% {
+        transform: translateX(-5%);
         /* transform: translate(75%, -5%) */
         opacity: 0;
     }
@@ -108,15 +124,15 @@ p {
 }
 @keyframes slideInFromBottomImg {
     0% {
-        transform: translateY(75px);
+        transform: translateY(-75px);
         opacity: 0;
     }
-    5% {
+    /* 5% {
         transform: translateY(75px);
         opacity: 0;
-    }
+    } */
     100% {
-        transform: translateX(0);
+        transform: translateY(0);
         opacity: 1;
     }
 }
